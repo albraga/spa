@@ -9,7 +9,7 @@ new Vue({
 	store,
 	render: h => h(App),
 	data: {
-		datum: ''
+		lng: 'en'
 	},
 	router
 })

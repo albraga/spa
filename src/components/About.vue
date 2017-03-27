@@ -27,25 +27,7 @@
 
 <script>
 	import 'script-loader!../../static/bootstrap/js/bootstrap.min.js'
-	import i18next from 'i18next'
-	import pt from '../i18next-cfg/pt'
-
-	let author, aboutAuthor
-
-	i18next.init({
-		lng: 'pt',
-		resources: {
-			pt: {
-				translation: {
-					'author': pt.message.author,
-					'aboutAuthor': pt.message.aboutAuthor
-				}
-			}
-		}
-	}, (err, t) => {
-		author = i18next.t('author'),
-		aboutAuthor = i18next.t('aboutAuthor')
-	})
+	import { author, aboutAuthor } from '../i18next-cfg'
 	
 	export default {
 		name: 'about',
