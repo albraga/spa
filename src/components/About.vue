@@ -6,7 +6,7 @@
 					<h1 class="page-header">Sobre mim
 						<small>Prazer em conhecer!</small>
 					</h1>
-					<p> {{$t("message.author")}} </p>
+					<p> {{author}} </p>
 				</div>
 			</div>
 			<div class="row">
@@ -18,7 +18,7 @@
 					<h3>Alexandre Braga
 						<small>Analista de Sistemas</small>
 					</h3>
-					<p> {{$t("message.aboutAuthor")}} </p>
+					<p> {{aboutAuthor}} </p>
 				</div>
 			</div>
 		</div>
@@ -27,12 +27,32 @@
 
 <script>
 	import 'script-loader!../../static/bootstrap/js/bootstrap.min.js'
+	import i18next from 'i18next'
+	import pt from '../i18next-cfg/pt'
 
+	let author, aboutAuthor
+
+	i18next.init({
+		lng: 'pt',
+		resources: {
+			pt: {
+				translation: {
+					'author': pt.message.author,
+					'aboutAuthor': pt.message.aboutAuthor
+				}
+			}
+		}
+	}, (err, t) => {
+		author = i18next.t('author'),
+		aboutAuthor = i18next.t('aboutAuthor')
+	})
+	
 	export default {
 		name: 'about',
 		data() {
 			return {
-				msg: 'sobre'
+				author: author,
+				aboutAuthor: aboutAuthor
 			}
 		}
 	}
