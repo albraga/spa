@@ -8,6 +8,9 @@ import BibliadeEstudo from '../components/BibliadeEstudo.vue'
 //	import Threejs from '../components/Threejs.vue'
 //	import Jqueryuijs from '../components/Jqueryuijs.vue'
 //	import Jspdfjs from '../components/Jspdfjs.vue'
+import inext from '../i18next-cfg'
+
+const { author, aboutAuthor } = inext('pt')
 
 Vue.use(VueRouter)
 
@@ -19,7 +22,8 @@ export default new VueRouter({
 		},
 		{
 			path: '/about',
-			component: About
+			component: About,
+			props: { author, aboutAuthor }
 		},
 		{
 			path: '/bibliadeestudo/:book?/:chapter?/:verse?',

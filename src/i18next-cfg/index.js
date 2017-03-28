@@ -1,12 +1,11 @@
-import Vue from 'vue'
 import i18next from 'i18next'
 import pt from './pt'
 import en from './en'
 
+module.exports = function(lng) {
 	let author, aboutAuthor
-
 	i18next.init({
-		lng: 'en',
+		lng: lng,
 		resources: {
 			pt: {
 				translation: {
@@ -22,8 +21,9 @@ import en from './en'
 			}
 		}
 	}, (err, t) => {
-		author = i18next.t('author'),
+		if (err) { console.log(err) }
+		author = i18next.t('author')
 		aboutAuthor = i18next.t('aboutAuthor')
 	})
-
-	module.exports = { author, aboutAuthor }
+	return { author, aboutAuthor }
+}

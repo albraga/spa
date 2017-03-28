@@ -6,7 +6,7 @@
 					<h1 class="page-header">Sobre mim
 						<small>Prazer em conhecer!</small>
 					</h1>
-					<p> {{author}} </p>
+					<p> {{ author }} </p>
 				</div>
 			</div>
 			<div class="row">
@@ -18,7 +18,7 @@
 					<h3>Alexandre Braga
 						<small>Analista de Sistemas</small>
 					</h3>
-					<p> {{aboutAuthor}} </p>
+					<p> {{ aboutAuthor }} </p>
 				</div>
 			</div>
 		</div>
@@ -27,16 +27,10 @@
 
 <script>
 	import 'script-loader!../../static/bootstrap/js/bootstrap.min.js'
-	import { author, aboutAuthor } from '../i18next-cfg'
 	
 	export default {
 		name: 'about',
-		data() {
-			return {
-				author: author,
-				aboutAuthor: aboutAuthor
-			}
-		}
+		props: ['author', 'aboutAuthor']
 	}
 </script>
 

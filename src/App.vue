@@ -13,15 +13,9 @@
 </template>
 
 <script>
-
-export default {
-	name: 'app',
-	data() {
-		return {
-			msg: ''
-		}
+	export default {
+		name: 'app'
 	}
-}
 
 </script>
 
